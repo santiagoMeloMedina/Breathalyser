@@ -1,0 +1,27 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity PC is
+port(
+	clk : in std_logic;
+	sigwrite : in std_logic;
+	entry : in std_logic_vector(15 downto 0);
+	salida : out std_logic_vector(15 downto 0)
+);
+end PC;
+
+architecture arc_PC of PC is
+signal address : std_logic_vector(15 downto 0);
+begin
+	process (clk, sigwrite, entry, address) is
+	begin
+		if rising_edge(clk) then
+			if (sigwrite = '1') then
+				address <= address + entry;
+			end if;
+			salida <= address;
+		end if;
+	end process;
+end arc_PC;

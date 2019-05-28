@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity pc_memory_control is
+port(
+	
+);
+end pc_memory_control;
+
+architecture arc_pc_memory_control of pc_memory_control is
+begin
+	
+end pc_memory_control;

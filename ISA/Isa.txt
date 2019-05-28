@@ -1,0 +1,42 @@
+
+Arquitectura 20 bits
+
+4 bits de registro: 16 registros
+4 bits de de op: 15 instrucciones
+
+AR-Type   4op - 4rf - 4rs - 4rw (rf-first, rs-second, rw-write)
+IR-Type   4op - 4rf - 4rw - 4i (i-inmidiate)
+AI-Type   4op - 12i
+
+ALU:
+  suma:          0000
+  resta:         0001
+  multiplicar:   0010
+  dividir:       0011
+  igual:         0100
+  menor:         0101
+  mayor:         0110
+  modulo:        0111
+  or:            1000
+  and:           1001
+
+
+Instructions:
+  addi r2 r1 #      || r2 = r1+#
+  add r1 r2 r3      || r3 = r1+r2
+  sub r1 r2 r3      || r3 = r1-r2
+  mult r1 r2 r3     || r3 = r1*r2
+  div r1 r2 r3      || r3 = r1/r2
+  mod r1 r2 r3      || r3 = r1%r2
+  brch r1 r2 #      || r1 == r2 -> pc = #
+  great r1 r2 #     || r1 > r2 -> pc = #
+  less r1 r2 #      || r1 < r2 -> pc = #
+  sw r1 r2 #        || [r1+#] = r2
+  lw r1 r2 #        || r2 = [r1+#]
+  jump #            || pc = #
+
+
+Registers:
+  16-bit:
+    r0 - r15 = 0000 - 1111
+    (r15 reserved for 0)

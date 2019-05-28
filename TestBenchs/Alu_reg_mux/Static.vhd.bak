@@ -1,0 +1,11 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity Static is
+end Static;
+
+architecture arc_Static of Static is
+signal stc : std_logic_vector(15 downto 0);
+end arc_Static;

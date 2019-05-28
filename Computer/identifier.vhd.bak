@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity identifier is
+port(
+	clock : in std_logic;
+	number : in std_logic_vector(15 downto 0);
+	display1, display2, display3, display4 : out std_logic_vector(6 downto 0)
+);
+end identifier;
+
+architecture arc_identifier of identifier is
+begin
+
+end arc_identifier;

@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity MDR is
+port(
+	clk : in std_logic;
+	ao : in std_logic_vector(15 downto 0);
+	aout : out std_logic_vector(15 downto 0)
+);
+end MDR;
+
+architecture arc_MDR of MDR is
+signal count : std_logic_vector(1 downto 0) := "00";
+signal data : std_logic_vector(15 downto 0);
+begin
+	process (clk, ao) is
+	begin
+		if falling_edge(clk) then
+			count <= count + "01";
+		end if;
+		if count = "10" then
+			count <= "00";
+			data <= ao;
+		end if;
+		aout <= data;
+	end process;
+end arc_MDR;

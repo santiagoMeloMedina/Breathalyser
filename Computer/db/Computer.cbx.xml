@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Computer">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Computer|decoder:Decodificador|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_7so.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Computer|decoder:Decodificador|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_jem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Computer|procesador:ProcesadorComp|ALU:AluComp|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_3gm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Computer|procesador:ProcesadorComp|ALU:AluComp|lpm_mult:Mult0" CBX_FILE_NAME="mult_l8t.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

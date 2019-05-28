@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Santiago Melo\Desktop\Breath\TestBenchs\Alu_reg_mux\simulation\qsim
+varm
+Z1 !s100 zb]c0g6TFKER?hI7[D1H^1
+Z2 IX;HN<^^k9e3[P_5JoV4zO3
+Z3 VdL0geEUBD1Rni9J:ej6E80
+Z4 dC:\Users\Santiago Melo\Desktop\Breath\TestBenchs\Alu_reg_mux\simulation\qsim
+Z5 w1557845400
+Z6 8arm.vo
+Z7 Farm.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|arm.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1557845402.281000
+Z12 !s107 arm.vo|
+!s101 -O0
+varm_vlg_check_tst
+!i10b 1
+Z13 !s100 g3n>lWYbFg@NUa5i>khEL2
+Z14 I2fK__XCoS<^n__zUM9B_S3
+Z15 V]D9mjWfGF6e@DUhTIYm0o3
+R4
+Z16 w1557845398
+Z17 8arm.vt
+Z18 Farm.vt
+L0 65
+R8
+r1
+!s85 0
+31
+Z19 !s108 1557845402.825000
+Z20 !s107 arm.vt|
+Z21 !s90 -work|work|arm.vt|
+!s101 -O0
+R10
+varm_vlg_sample_tst
+!i10b 1
+Z22 !s100 n_G`c7=BV>k[2Y1PjKL@>3
+Z23 IjDhOlc4N=MAGDeATXk1AU1
+Z24 V[CR4HnX8^>>:_<K2@0K3F0
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+varm_vlg_vec_tst
+!i10b 1
+Z25 !s100 Pbcd_n@Pni@Fe5WS?kfB]2
+Z26 If[e0DC5nYKEV7^G;5G4<43
+Z27 V2[2c]DHBF>ScMD0oEYlYN0
+R4
+R16
+R17
+R18
+Z28 L0 429
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

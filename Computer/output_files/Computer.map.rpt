@@ -1,0 +1,1321 @@
+Analysis & Synthesis report for Computer
+Sun May 26 23:23:04 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |Computer|procesador:ProcesadorComp|control:ControlUnit|currentState
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: procesador:ProcesadorComp|control:ControlUnit
+ 15. Parameter Settings for Inferred Entity Instance: decoder:Decodificador|lpm_divide:Div1
+ 16. Parameter Settings for Inferred Entity Instance: decoder:Decodificador|lpm_divide:Div0
+ 17. Parameter Settings for Inferred Entity Instance: procesador:ProcesadorComp|ALU:AluComp|lpm_divide:Div0
+ 18. Parameter Settings for Inferred Entity Instance: procesador:ProcesadorComp|ALU:AluComp|lpm_mult:Mult0
+ 19. lpm_mult Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "decoder:Decodificador|module:Second"
+ 21. Port Connectivity Checks: "decoder:Decodificador|module:First"
+ 22. Port Connectivity Checks: "decoder:Decodificador"
+ 23. Port Connectivity Checks: "procesador:ProcesadorComp|mux4:InmJmpRegB"
+ 24. Port Connectivity Checks: "procesador:ProcesadorComp|mux2:MuxAZero"
+ 25. Port Connectivity Checks: "procesador:ProcesadorComp|PC:ProgramCounter"
+ 26. Port Connectivity Checks: "procesador:ProcesadorComp"
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun May 26 23:23:04 2019           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Computer                                        ;
+; Top-level Entity Name              ; Computer                                        ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 4,162                                           ;
+;     Total combinational functions  ; 2,931                                           ;
+;     Dedicated logic registers      ; 1,377                                           ;
+; Total registers                    ; 1377                                            ;
+; Total pins                         ; 84                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 2                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; Computer           ; Computer           ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; memory.vhd                       ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/memory.vhd                 ;         ;
+; control.vhd                      ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/control.vhd                ;         ;
+; PC.vhd                           ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/PC.vhd                     ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/ALU.vhd                    ;         ;
+; A.vhd                            ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/A.vhd                      ;         ;
+; instructions.vhd                 ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/instructions.vhd           ;         ;
+; registerfile.vhd                 ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/registerfile.vhd           ;         ;
+; mux2.vhd                         ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/mux2.vhd                   ;         ;
+; mux4.vhd                         ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/mux4.vhd                   ;         ;
+; mux3.vhd                         ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/mux3.vhd                   ;         ;
+; mux2_4.vhd                       ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/mux2_4.vhd                 ;         ;
+; ALUOUT.vhd                       ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/ALUOUT.vhd                 ;         ;
+; signExtend.vhd                   ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/signExtend.vhd             ;         ;
+; signExtend_12.vhd                ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/signExtend_12.vhd          ;         ;
+; MDR.vhd                          ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/MDR.vhd                    ;         ;
+; Computer.vhd                     ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/Computer.vhd               ;         ;
+; procesador.vhd                   ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/procesador.vhd             ;         ;
+; module.vhd                       ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/module.vhd                 ;         ;
+; identifier.vhd                   ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/identifier.vhd             ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File               ; C:/Users/Santiago Melo/Desktop/Breath/Computer/decoder.vhd                ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf          ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/abs_divider.inc         ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc     ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc          ;         ;
+; db/lpm_divide_jem.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/lpm_divide_jem.tdf      ;         ;
+; db/sign_div_unsign_tlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/sign_div_unsign_tlh.tdf ;         ;
+; db/alt_u_div_s2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/alt_u_div_s2f.tdf       ;         ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/add_sub_lkc.tdf         ;         ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/add_sub_mkc.tdf         ;         ;
+; db/lpm_divide_7so.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/lpm_divide_7so.tdf      ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/abs_divider_kbg.tdf     ;         ;
+; db/alt_u_div_k2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/alt_u_div_k2f.tdf       ;         ;
+; db/lpm_abs_gq9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/lpm_abs_gq9.tdf         ;         ;
+; db/lpm_abs_0s9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/lpm_abs_0s9.tdf         ;         ;
+; db/lpm_divide_3gm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/lpm_divide_3gm.tdf      ;         ;
+; db/sign_div_unsign_dnh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/sign_div_unsign_dnh.tdf ;         ;
+; db/alt_u_div_s5f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/alt_u_div_s5f.tdf       ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; db/mult_l8t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Santiago Melo/Desktop/Breath/Computer/db/mult_l8t.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 4,162 ;
+;                                             ;       ;
+; Total combinational functions               ; 2931  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 2112  ;
+;     -- 3 input functions                    ; 470   ;
+;     -- <=2 input functions                  ; 349   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 2575  ;
+;     -- arithmetic mode                      ; 356   ;
+;                                             ;       ;
+; Total registers                             ; 1377  ;
+;     -- Dedicated logic registers            ; 1377  ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 84    ;
+; Embedded Multiplier 9-bit elements          ; 2     ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 1377  ;
+; Total fan-out                               ; 14660 ;
+; Average fan-out                             ; 3.34  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                       ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                             ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Computer                                    ; 2931 (1)          ; 1377 (0)     ; 0           ; 2            ; 0       ; 1         ; 84   ; 0            ; |Computer                                                                                                                                       ; work         ;
+;    |decoder:Decodificador|                   ; 502 (46)          ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador                                                                                                                 ; work         ;
+;       |identifier:Identificador|             ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador|identifier:Identificador                                                                                        ; work         ;
+;       |lpm_divide:Div0|                      ; 193 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador|lpm_divide:Div0                                                                                                 ; work         ;
+;          |lpm_divide_7so:auto_generated|     ; 193 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador|lpm_divide:Div0|lpm_divide_7so:auto_generated                                                                   ; work         ;
+;             |abs_divider_kbg:divider|        ; 193 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador|lpm_divide:Div0|lpm_divide_7so:auto_generated|abs_divider_kbg:divider                                           ; work         ;
+;                |alt_u_div_k2f:divider|       ; 193 (193)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador|lpm_divide:Div0|lpm_divide_7so:auto_generated|abs_divider_kbg:divider|alt_u_div_k2f:divider                     ; work         ;
+;       |lpm_divide:Div1|                      ; 201 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador|lpm_divide:Div1                                                                                                 ; work         ;
+;          |lpm_divide_jem:auto_generated|     ; 201 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador|lpm_divide:Div1|lpm_divide_jem:auto_generated                                                                   ; work         ;
+;             |sign_div_unsign_tlh:divider|    ; 201 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador|lpm_divide:Div1|lpm_divide_jem:auto_generated|sign_div_unsign_tlh:divider                                       ; work         ;
+;                |alt_u_div_s2f:divider|       ; 201 (201)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador|lpm_divide:Div1|lpm_divide_jem:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_s2f:divider                 ; work         ;
+;       |module:First|                         ; 20 (20)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador|module:First                                                                                                    ; work         ;
+;       |module:Second|                        ; 21 (21)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|decoder:Decodificador|module:Second                                                                                                   ; work         ;
+;    |memory:Memoria|                          ; 1506 (1506)       ; 1037 (1037)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|memory:Memoria                                                                                                                        ; work         ;
+;    |procesador:ProcesadorComp|               ; 922 (11)          ; 284 (0)      ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp                                                                                                             ; work         ;
+;       |ALU:AluComp|                          ; 416 (123)         ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|ALU:AluComp                                                                                                 ; work         ;
+;          |lpm_divide:Div0|                   ; 293 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|ALU:AluComp|lpm_divide:Div0                                                                                 ; work         ;
+;             |lpm_divide_3gm:auto_generated|  ; 293 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|ALU:AluComp|lpm_divide:Div0|lpm_divide_3gm:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_dnh:divider| ; 293 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|ALU:AluComp|lpm_divide:Div0|lpm_divide_3gm:auto_generated|sign_div_unsign_dnh:divider                       ; work         ;
+;                   |alt_u_div_s5f:divider|    ; 293 (293)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|ALU:AluComp|lpm_divide:Div0|lpm_divide_3gm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_s5f:divider ; work         ;
+;          |lpm_mult:Mult0|                    ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|ALU:AluComp|lpm_mult:Mult0                                                                                  ; work         ;
+;             |mult_l8t:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|ALU:AluComp|lpm_mult:Mult0|mult_l8t:auto_generated                                                          ; work         ;
+;       |ALUOUT:AluOutComp|                    ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|ALUOUT:AluOutComp                                                                                           ; work         ;
+;       |MDR:MemDataReg|                       ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|MDR:MemDataReg                                                                                              ; work         ;
+;       |PC:ProgramCounter|                    ; 12 (12)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|PC:ProgramCounter                                                                                           ; work         ;
+;       |control:ControlUnit|                  ; 25 (25)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|control:ControlUnit                                                                                         ; work         ;
+;       |instructions:InstructionRegister|     ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|instructions:InstructionRegister                                                                            ; work         ;
+;       |mux2:AOMReg|                          ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|mux2:AOMReg                                                                                                 ; work         ;
+;       |mux2:MuxAZero|                        ; 176 (176)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|mux2:MuxAZero                                                                                               ; work         ;
+;       |mux2:PcMem|                           ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|mux2:PcMem                                                                                                  ; work         ;
+;       |mux2_4:InsReg|                        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|mux2_4:InsReg                                                                                               ; work         ;
+;       |mux3:PcJB|                            ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|mux3:PcJB                                                                                                   ; work         ;
+;       |mux4:InmJmpRegB|                      ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|mux4:InmJmpRegB                                                                                             ; work         ;
+;       |registerfile:RegisterFileComp|        ; 184 (184)         ; 256 (256)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Computer|procesador:ProcesadorComp|registerfile:RegisterFileComp                                                                               ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 2           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Computer|procesador:ProcesadorComp|control:ControlUnit|currentState                                                                                                                                                                                                                                                   ;
++-----------------------------+--------------------+----------------------+-----------------------------+------------------------+----------------------------+-----------------------+------------------------+----------------------------+-----------------------+-----------------------+----------------------+---------------------+
+; Name                        ; currentState.JumpS ; currentState.BranchS ; currentState.ALUWriteBackIS ; currentState.ExecuteIS ; currentState.ALUWriteBackS ; currentState.ExecuteS ; currentState.MemWriteS ; currentState.MemWriteBackS ; currentState.MemReadS ; currentState.MemAddrS ; currentState.DecodeS ; currentState.FetchS ;
++-----------------------------+--------------------+----------------------+-----------------------------+------------------------+----------------------------+-----------------------+------------------------+----------------------------+-----------------------+-----------------------+----------------------+---------------------+
+; currentState.FetchS         ; 0                  ; 0                    ; 0                           ; 0                      ; 0                          ; 0                     ; 0                      ; 0                          ; 0                     ; 0                     ; 0                    ; 0                   ;
+; currentState.DecodeS        ; 0                  ; 0                    ; 0                           ; 0                      ; 0                          ; 0                     ; 0                      ; 0                          ; 0                     ; 0                     ; 1                    ; 1                   ;
+; currentState.MemAddrS       ; 0                  ; 0                    ; 0                           ; 0                      ; 0                          ; 0                     ; 0                      ; 0                          ; 0                     ; 1                     ; 0                    ; 1                   ;
+; currentState.MemReadS       ; 0                  ; 0                    ; 0                           ; 0                      ; 0                          ; 0                     ; 0                      ; 0                          ; 1                     ; 0                     ; 0                    ; 1                   ;
+; currentState.MemWriteBackS  ; 0                  ; 0                    ; 0                           ; 0                      ; 0                          ; 0                     ; 0                      ; 1                          ; 0                     ; 0                     ; 0                    ; 1                   ;
+; currentState.MemWriteS      ; 0                  ; 0                    ; 0                           ; 0                      ; 0                          ; 0                     ; 1                      ; 0                          ; 0                     ; 0                     ; 0                    ; 1                   ;
+; currentState.ExecuteS       ; 0                  ; 0                    ; 0                           ; 0                      ; 0                          ; 1                     ; 0                      ; 0                          ; 0                     ; 0                     ; 0                    ; 1                   ;
+; currentState.ALUWriteBackS  ; 0                  ; 0                    ; 0                           ; 0                      ; 1                          ; 0                     ; 0                      ; 0                          ; 0                     ; 0                     ; 0                    ; 1                   ;
+; currentState.ExecuteIS      ; 0                  ; 0                    ; 0                           ; 1                      ; 0                          ; 0                     ; 0                      ; 0                          ; 0                     ; 0                     ; 0                    ; 1                   ;
+; currentState.ALUWriteBackIS ; 0                  ; 0                    ; 1                           ; 0                      ; 0                          ; 0                     ; 0                      ; 0                          ; 0                     ; 0                     ; 0                    ; 1                   ;
+; currentState.BranchS        ; 0                  ; 1                    ; 0                           ; 0                      ; 0                          ; 0                     ; 0                      ; 0                          ; 0                     ; 0                     ; 0                    ; 1                   ;
+; currentState.JumpS          ; 1                  ; 0                    ; 0                           ; 0                      ; 0                          ; 0                     ; 0                      ; 0                          ; 0                     ; 0                     ; 0                    ; 1                   ;
++-----------------------------+--------------------+----------------------+-----------------------------+------------------------+----------------------------+-----------------------+------------------------+----------------------------+-----------------------+-----------------------+----------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                                         ;
++------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------------+
+; Latch Name                                                                   ; Latch Enable Signal                                                 ; Free of Timing Hazards ;
++------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------------+
+; procesador:ProcesadorComp|instructions:InstructionRegister|opcode[0]         ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|opcode[1]         ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|opcode[2]         ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|opcode[3]         ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[0]                          ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[0]                             ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r2[3]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r3[3]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r2[0]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r3[0]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r2[1]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r3[1]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r2[2]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r3[2]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[1]                          ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[1]                             ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[2]                          ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[2]                             ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[3]                          ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[3]                             ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[4]                          ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[4]                             ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[5]                          ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[5]                             ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[6]                          ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[6]                             ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[7]                          ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[7]                             ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[8]                          ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[8]                             ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[9]                          ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[9]                             ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[10]                         ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[10]                            ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[11]                         ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[11]                            ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[12]                         ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[12]                            ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[13]                         ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[13]                            ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[14]                         ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[14]                            ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|ALUOUT:AluOutComp|data[15]                         ; procesador:ProcesadorComp|control:ControlUnit|Selector2             ; yes                    ;
+; procesador:ProcesadorComp|MDR:MemDataReg|data[15]                            ; procesador:ProcesadorComp|control:ControlUnit|currentState.MemReadS ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r1[1]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r1[0]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r1[3]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|r1[2]             ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[0]      ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[0]                                ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[1]      ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[1]                                ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[2]      ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[2]                                ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[3]      ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[3]                                ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[4]      ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[4]                                ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[5]      ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[5]                                ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[6]      ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[6]                                ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[7]      ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[7]                                ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[8]                                ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[9]                                ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[10]                               ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[11]                               ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[12]                               ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[13]                               ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[14]                               ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|ALU:AluComp|mult[15]                               ; procesador:ProcesadorComp|ALU:AluComp|Equal0                        ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[3]  ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[0]  ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[2]  ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[4]  ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[5]  ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[1]  ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[6]  ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[7]  ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[8]  ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[9]  ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[10] ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[11] ; procesador:ProcesadorComp|control:ControlUnit|currentState.FetchS   ; yes                    ;
+; Number of user-specified and inferred latches = 84                           ;                                                                     ;                        ;
++------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++--------------------------------------------------+----------------------------------------+
+; Register name                                    ; Reason for Removal                     ;
++--------------------------------------------------+----------------------------------------+
+; decoder:Decodificador|module:First|modl[15]      ; Stuck at GND due to stuck port data_in ;
+; decoder:Decodificador|module:Second|modl[15]     ; Stuck at GND due to stuck port data_in ;
+; decoder:Decodificador|module:First|modl[12..14]  ; Stuck at GND due to stuck port data_in ;
+; decoder:Decodificador|module:Second|modl[12..14] ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1308                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1309                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1310                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1311                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1312                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1313                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1314                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1315                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1316                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1317                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1318                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1319                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1320                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1321                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1322                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1323                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1324                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1325                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1326                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~1327                      ; Lost fanout                            ;
+; memory:Memoria|ins_mem~44                        ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~64                        ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~84                        ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~104                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~124                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~144                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~184                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~204                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~224                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~244                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~264                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~304                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~324                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~344                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~364                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~384                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~404                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~424                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~444                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~464                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~484                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~504                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~524                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~544                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~564                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~584                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~604                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~624                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~644                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~664                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~684                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~704                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~724                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~744                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~764                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~784                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~804                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~824                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~844                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~864                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~884                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~904                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~924                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~944                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~964                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~984                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1004                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1024                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1044                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1064                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1084                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1104                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1124                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1144                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1164                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1184                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1204                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1224                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1244                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1264                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1284                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1304                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~45                        ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~65                        ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~85                        ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~105                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~125                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~145                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~165                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~185                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~205                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~245                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~285                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~305                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~345                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~365                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~385                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~405                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~425                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~445                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~465                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~485                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~505                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~525                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~545                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~565                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~585                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~605                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~625                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~645                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~665                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~685                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~705                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~725                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~745                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~765                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~785                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~805                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~825                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~845                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~865                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~885                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~905                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~925                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~945                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~965                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~985                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1005                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1025                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1045                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1065                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1085                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1105                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1125                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1145                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1165                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1185                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1205                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1225                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1245                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1265                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1285                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1305                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~46                        ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~226                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~286                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~306                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~346                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~366                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~386                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~406                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~426                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~446                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~466                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~486                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~506                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~526                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~546                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~566                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~586                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~606                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~626                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~646                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~666                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~686                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~706                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~726                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~746                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~766                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~786                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~806                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~826                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~846                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~866                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~886                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~906                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~926                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~946                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~966                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~986                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1006                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1026                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1046                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1066                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1086                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1106                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1126                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1146                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1166                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1186                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1206                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1226                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1246                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1266                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1286                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1306                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~47                        ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~187                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~227                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~287                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~307                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~347                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~367                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~387                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~407                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~427                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~447                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~467                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~487                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~507                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~527                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~547                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~567                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~587                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~607                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~627                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~647                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~667                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~687                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~707                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~727                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~747                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~767                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~787                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~807                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~827                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~847                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~867                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~887                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~907                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~927                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~947                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~967                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~987                       ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1007                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1027                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1047                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1067                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1087                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1107                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1127                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1147                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1167                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1187                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1207                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1227                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1247                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1267                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1287                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~1307                      ; Stuck at GND due to stuck port data_in ;
+; memory:Memoria|ins_mem~166                       ; Merged with memory:Memoria|ins_mem~164 ;
+; memory:Memoria|ins_mem~167                       ; Merged with memory:Memoria|ins_mem~164 ;
+; memory:Memoria|ins_mem~266                       ; Merged with memory:Memoria|ins_mem~265 ;
+; memory:Memoria|ins_mem~267                       ; Merged with memory:Memoria|ins_mem~265 ;
+; memory:Memoria|ins_mem~326                       ; Merged with memory:Memoria|ins_mem~325 ;
+; memory:Memoria|ins_mem~327                       ; Merged with memory:Memoria|ins_mem~325 ;
+; memory:Memoria|ins_mem~67                        ; Merged with memory:Memoria|ins_mem~66  ;
+; memory:Memoria|ins_mem~87                        ; Merged with memory:Memoria|ins_mem~86  ;
+; memory:Memoria|ins_mem~107                       ; Merged with memory:Memoria|ins_mem~106 ;
+; memory:Memoria|ins_mem~127                       ; Merged with memory:Memoria|ins_mem~126 ;
+; memory:Memoria|ins_mem~147                       ; Merged with memory:Memoria|ins_mem~146 ;
+; memory:Memoria|ins_mem~207                       ; Merged with memory:Memoria|ins_mem~206 ;
+; memory:Memoria|ins_mem~247                       ; Merged with memory:Memoria|ins_mem~246 ;
+; Total Number of Removed Registers = 271          ;                                        ;
++--------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1377  ;
+; Number of registers using Synchronous Clear  ; 1     ;
+; Number of registers using Synchronous Load   ; 39    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1336  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Computer|procesador:ProcesadorComp|PC:ProgramCounter|address[13]         ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |Computer|procesador:ProcesadorComp|PC:ProgramCounter|address[0]          ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 80 LEs               ; 80 LEs                 ; No         ; |Computer|procesador:ProcesadorComp|ALU:AluComp|result[14]                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |Computer|procesador:ProcesadorComp|control:ControlUnit|NextState.BranchS ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |Computer|procesador:ProcesadorComp|registerfile:RegisterFileComp|Mux21   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Computer|procesador:ProcesadorComp|mux4:InmJmpRegB|salida[2]             ;
+; 18:1               ; 16 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |Computer|procesador:ProcesadorComp|mux2:MuxAZero|salida[6]               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: procesador:ProcesadorComp|control:ControlUnit ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; SIZE           ; 22    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: decoder:Decodificador|lpm_divide:Div1 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                      ;
+; LPM_WIDTHD             ; 7              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_jem ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: decoder:Decodificador|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                      ;
+; LPM_WIDTHD             ; 5              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_7so ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: procesador:ProcesadorComp|ALU:AluComp|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                         ;
++------------------------+----------------+--------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                                      ;
+; LPM_WIDTHD             ; 16             ; Untyped                                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                      ;
+; CBXI_PARAMETER         ; lpm_divide_3gm ; Untyped                                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                               ;
++------------------------+----------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: procesador:ProcesadorComp|ALU:AluComp|lpm_mult:Mult0 ;
++------------------------------------------------+------------+-----------------------------------------+
+; Parameter Name                                 ; Value      ; Type                                    ;
++------------------------------------------------+------------+-----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE                          ;
+; LPM_WIDTHA                                     ; 16         ; Untyped                                 ;
+; LPM_WIDTHB                                     ; 16         ; Untyped                                 ;
+; LPM_WIDTHP                                     ; 32         ; Untyped                                 ;
+; LPM_WIDTHR                                     ; 32         ; Untyped                                 ;
+; LPM_WIDTHS                                     ; 1          ; Untyped                                 ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped                                 ;
+; LPM_PIPELINE                                   ; 0          ; Untyped                                 ;
+; LATENCY                                        ; 0          ; Untyped                                 ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped                                 ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped                                 ;
+; USE_EAB                                        ; OFF        ; Untyped                                 ;
+; MAXIMIZE_SPEED                                 ; 6          ; Untyped                                 ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped                                 ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped                                 ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K                     ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped                                 ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped                                 ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped                                 ;
+; CBXI_PARAMETER                                 ; mult_l8t   ; Untyped                                 ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped                                 ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped                                 ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped                                 ;
++------------------------------------------------+------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                               ;
++---------------------------------------+------------------------------------------------------+
+; Name                                  ; Value                                                ;
++---------------------------------------+------------------------------------------------------+
+; Number of entity instances            ; 1                                                    ;
+; Entity Instance                       ; procesador:ProcesadorComp|ALU:AluComp|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                                                   ;
+;     -- LPM_WIDTHB                     ; 16                                                   ;
+;     -- LPM_WIDTHP                     ; 32                                                   ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                             ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                   ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                   ;
+;     -- USE_EAB                        ; OFF                                                  ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                 ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                   ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                   ;
++---------------------------------------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "decoder:Decodificador|module:Second" ;
++--------------+-------+----------+-------------------------------+
+; Port         ; Type  ; Severity ; Details                       ;
++--------------+-------+----------+-------------------------------+
+; other[15..4] ; Input ; Info     ; Stuck at GND                  ;
+; other[3]     ; Input ; Info     ; Stuck at VCC                  ;
+; other[2]     ; Input ; Info     ; Stuck at GND                  ;
+; other[1]     ; Input ; Info     ; Stuck at VCC                  ;
+; other[0]     ; Input ; Info     ; Stuck at GND                  ;
++--------------+-------+----------+-------------------------------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "decoder:Decodificador|module:First" ;
++--------------+-------+----------+------------------------------+
+; Port         ; Type  ; Severity ; Details                      ;
++--------------+-------+----------+------------------------------+
+; other[6..5]  ; Input ; Info     ; Stuck at VCC                 ;
+; other[15..7] ; Input ; Info     ; Stuck at GND                 ;
+; other[4..3]  ; Input ; Info     ; Stuck at GND                 ;
+; other[1..0]  ; Input ; Info     ; Stuck at GND                 ;
+; other[2]     ; Input ; Info     ; Stuck at VCC                 ;
++--------------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoder:Decodificador"                                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; vs   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "procesador:ProcesadorComp|mux4:InmJmpRegB" ;
++---------------+-------+----------+------------------------------------+
+; Port          ; Type  ; Severity ; Details                            ;
++---------------+-------+----------+------------------------------------+
+; second[15..1] ; Input ; Info     ; Stuck at GND                       ;
+; second[0]     ; Input ; Info     ; Stuck at VCC                       ;
+; fourth        ; Input ; Info     ; Stuck at GND                       ;
++---------------+-------+----------+------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "procesador:ProcesadorComp|mux2:MuxAZero" ;
++--------+-------+----------+-----------------------------------------+
+; Port   ; Type  ; Severity ; Details                                 ;
++--------+-------+----------+-----------------------------------------+
+; second ; Input ; Info     ; Stuck at GND                            ;
++--------+-------+----------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "procesador:ProcesadorComp|PC:ProgramCounter"                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; s2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "procesador:ProcesadorComp"                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; visual3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; visual4 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun May 26 23:22:54 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Computer -c Computer
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
+    Info (12022): Found design unit 1: memory-arc_memory
+    Info (12023): Found entity 1: memory
+Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
+    Info (12022): Found design unit 1: control-arc_control
+    Info (12023): Found entity 1: control
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: PC-arc_PC
+    Info (12023): Found entity 1: PC
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-arc_ALU
+    Info (12023): Found entity 1: ALU
+Info (12021): Found 2 design units, including 1 entities, in source file a.vhd
+    Info (12022): Found design unit 1: Static-arc_Static
+    Info (12023): Found entity 1: Static
+Info (12021): Found 2 design units, including 1 entities, in source file instructions.vhd
+    Info (12022): Found design unit 1: instructions-arc_instructions
+    Info (12023): Found entity 1: instructions
+Info (12021): Found 2 design units, including 1 entities, in source file registerfile.vhd
+    Info (12022): Found design unit 1: registerfile-arc_registerfile
+    Info (12023): Found entity 1: registerfile
+Info (12021): Found 2 design units, including 1 entities, in source file mux2.vhd
+    Info (12022): Found design unit 1: mux2-arc_mux2
+    Info (12023): Found entity 1: mux2
+Info (12021): Found 2 design units, including 1 entities, in source file mux4.vhd
+    Info (12022): Found design unit 1: mux4-arc_mux4
+    Info (12023): Found entity 1: mux4
+Info (12021): Found 2 design units, including 1 entities, in source file mux3.vhd
+    Info (12022): Found design unit 1: mux3-arc_mux3
+    Info (12023): Found entity 1: mux3
+Info (12021): Found 2 design units, including 1 entities, in source file mux2_4.vhd
+    Info (12022): Found design unit 1: mux2_4-arc_mux2_4
+    Info (12023): Found entity 1: mux2_4
+Info (12021): Found 2 design units, including 1 entities, in source file aluout.vhd
+    Info (12022): Found design unit 1: ALUOUT-arc_ALUOUT
+    Info (12023): Found entity 1: ALUOUT
+Info (12021): Found 2 design units, including 1 entities, in source file signextend.vhd
+    Info (12022): Found design unit 1: signExtend-arc_signExtend
+    Info (12023): Found entity 1: signExtend
+Info (12021): Found 2 design units, including 1 entities, in source file signextend_12.vhd
+    Info (12022): Found design unit 1: signExtend_12-arc_signExtend_12
+    Info (12023): Found entity 1: signExtend_12
+Info (12021): Found 2 design units, including 1 entities, in source file mdr.vhd
+    Info (12022): Found design unit 1: MDR-arc_MDR
+    Info (12023): Found entity 1: MDR
+Info (12021): Found 2 design units, including 1 entities, in source file computer.vhd
+    Info (12022): Found design unit 1: Computer-arc_Computer
+    Info (12023): Found entity 1: Computer
+Info (12021): Found 2 design units, including 1 entities, in source file procesador.vhd
+    Info (12022): Found design unit 1: procesador-arc_processor
+    Info (12023): Found entity 1: procesador
+Info (12021): Found 2 design units, including 1 entities, in source file module.vhd
+    Info (12022): Found design unit 1: module-arc_module
+    Info (12023): Found entity 1: module
+Info (12021): Found 2 design units, including 1 entities, in source file identifier.vhd
+    Info (12022): Found design unit 1: identifier-arc_identifier
+    Info (12023): Found entity 1: identifier
+Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
+    Info (12022): Found design unit 1: decoder-arc_decoder
+    Info (12023): Found entity 1: decoder
+Info (12127): Elaborating entity "Computer" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at Computer.vhd(11): used implicit default value for signal "v" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "memory" for hierarchy "memory:Memoria"
+Info (12128): Elaborating entity "procesador" for hierarchy "procesador:ProcesadorComp"
+Info (12128): Elaborating entity "control" for hierarchy "procesador:ProcesadorComp|control:ControlUnit"
+Info (12128): Elaborating entity "mux2" for hierarchy "procesador:ProcesadorComp|mux2:PcMem"
+Warning (10631): VHDL Process Statement warning at mux2.vhd(16): inferring latch(es) for signal or variable "salida", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "salida[0]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[1]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[2]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[3]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[4]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[5]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[6]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[7]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[8]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[9]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[10]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[11]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[12]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[13]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[14]" at mux2.vhd(16)
+Info (10041): Inferred latch for "salida[15]" at mux2.vhd(16)
+Info (12128): Elaborating entity "PC" for hierarchy "procesador:ProcesadorComp|PC:ProgramCounter"
+Info (12128): Elaborating entity "ALU" for hierarchy "procesador:ProcesadorComp|ALU:AluComp"
+Warning (10631): VHDL Process Statement warning at ALU.vhd(22): inferring latch(es) for signal or variable "mult", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "mult[0]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[1]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[2]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[3]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[4]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[5]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[6]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[7]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[8]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[9]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[10]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[11]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[12]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[13]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[14]" at ALU.vhd(22)
+Info (10041): Inferred latch for "mult[15]" at ALU.vhd(22)
+Info (12128): Elaborating entity "instructions" for hierarchy "procesador:ProcesadorComp|instructions:InstructionRegister"
+Warning (10631): VHDL Process Statement warning at instructions.vhd(19): inferring latch(es) for signal or variable "opcode", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at instructions.vhd(19): inferring latch(es) for signal or variable "r1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at instructions.vhd(19): inferring latch(es) for signal or variable "r2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at instructions.vhd(19): inferring latch(es) for signal or variable "r3", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at instructions.vhd(19): inferring latch(es) for signal or variable "inmidiate", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at instructions.vhd(19): inferring latch(es) for signal or variable "out_direccion", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "out_direccion[0]" at instructions.vhd(19)
+Info (10041): Inferred latch for "out_direccion[1]" at instructions.vhd(19)
+Info (10041): Inferred latch for "out_direccion[2]" at instructions.vhd(19)
+Info (10041): Inferred latch for "out_direccion[3]" at instructions.vhd(19)
+Info (10041): Inferred latch for "out_direccion[4]" at instructions.vhd(19)
+Info (10041): Inferred latch for "out_direccion[5]" at instructions.vhd(19)
+Info (10041): Inferred latch for "out_direccion[6]" at instructions.vhd(19)
+Info (10041): Inferred latch for "out_direccion[7]" at instructions.vhd(19)
+Info (10041): Inferred latch for "out_direccion[8]" at instructions.vhd(19)
+Info (10041): Inferred latch for "out_direccion[9]" at instructions.vhd(19)
+Info (10041): Inferred latch for "out_direccion[10]" at instructions.vhd(19)
+Info (10041): Inferred latch for "out_direccion[11]" at instructions.vhd(19)
+Info (10041): Inferred latch for "inmidiate[0]" at instructions.vhd(19)
+Info (10041): Inferred latch for "inmidiate[1]" at instructions.vhd(19)
+Info (10041): Inferred latch for "inmidiate[2]" at instructions.vhd(19)
+Info (10041): Inferred latch for "inmidiate[3]" at instructions.vhd(19)
+Info (10041): Inferred latch for "inmidiate[4]" at instructions.vhd(19)
+Info (10041): Inferred latch for "inmidiate[5]" at instructions.vhd(19)
+Info (10041): Inferred latch for "inmidiate[6]" at instructions.vhd(19)
+Info (10041): Inferred latch for "inmidiate[7]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r3[0]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r3[1]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r3[2]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r3[3]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r2[0]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r2[1]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r2[2]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r2[3]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r1[0]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r1[1]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r1[2]" at instructions.vhd(19)
+Info (10041): Inferred latch for "r1[3]" at instructions.vhd(19)
+Info (10041): Inferred latch for "opcode[0]" at instructions.vhd(19)
+Info (10041): Inferred latch for "opcode[1]" at instructions.vhd(19)
+Info (10041): Inferred latch for "opcode[2]" at instructions.vhd(19)
+Info (10041): Inferred latch for "opcode[3]" at instructions.vhd(19)
+Info (12128): Elaborating entity "mux2_4" for hierarchy "procesador:ProcesadorComp|mux2_4:InsReg"
+Warning (10631): VHDL Process Statement warning at mux2_4.vhd(16): inferring latch(es) for signal or variable "salida", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "salida[0]" at mux2_4.vhd(16)
+Info (10041): Inferred latch for "salida[1]" at mux2_4.vhd(16)
+Info (10041): Inferred latch for "salida[2]" at mux2_4.vhd(16)
+Info (10041): Inferred latch for "salida[3]" at mux2_4.vhd(16)
+Info (12128): Elaborating entity "MDR" for hierarchy "procesador:ProcesadorComp|MDR:MemDataReg"
+Warning (10492): VHDL Process Statement warning at MDR.vhd(22): signal "data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at MDR.vhd(17): inferring latch(es) for signal or variable "data", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "data[0]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[1]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[2]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[3]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[4]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[5]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[6]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[7]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[8]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[9]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[10]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[11]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[12]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[13]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[14]" at MDR.vhd(17)
+Info (10041): Inferred latch for "data[15]" at MDR.vhd(17)
+Info (12128): Elaborating entity "registerfile" for hierarchy "procesador:ProcesadorComp|registerfile:RegisterFileComp"
+Info (12128): Elaborating entity "Static" for hierarchy "procesador:ProcesadorComp|Static:A"
+Warning (10492): VHDL Process Statement warning at A.vhd(19): signal "ABtmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "signExtend" for hierarchy "procesador:ProcesadorComp|signExtend:Extendido"
+Info (12128): Elaborating entity "mux4" for hierarchy "procesador:ProcesadorComp|mux4:InmJmpRegB"
+Info (12128): Elaborating entity "signExtend_12" for hierarchy "procesador:ProcesadorComp|signExtend_12:Extendido2"
+Info (12128): Elaborating entity "mux3" for hierarchy "procesador:ProcesadorComp|mux3:PcJB"
+Info (12128): Elaborating entity "ALUOUT" for hierarchy "procesador:ProcesadorComp|ALUOUT:AluOutComp"
+Warning (10492): VHDL Process Statement warning at ALUOUT.vhd(23): signal "data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ALUOUT.vhd(18): inferring latch(es) for signal or variable "data", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "data[0]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[1]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[2]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[3]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[4]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[5]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[6]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[7]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[8]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[9]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[10]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[11]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[12]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[13]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[14]" at ALUOUT.vhd(18)
+Info (10041): Inferred latch for "data[15]" at ALUOUT.vhd(18)
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:Decodificador"
+Info (12128): Elaborating entity "module" for hierarchy "decoder:Decodificador|module:First"
+Info (12128): Elaborating entity "identifier" for hierarchy "decoder:Decodificador|identifier:Identificador"
+Warning (10540): VHDL Signal Declaration warning at identifier.vhd(15): used explicit default value for signal "codes" because signal was never assigned a value
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276004): RAM logic "procesador:ProcesadorComp|control:ControlUnit|data" is uninferred due to inappropriate RAM size
+    Info (276007): RAM logic "memory:Memoria|ins_mem" is uninferred due to asynchronous read logic
+Warning (113028): 63 out of 128 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
+    Warning (113027): Addresses ranging from 65 to 127 are not initialized
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "decoder:Decodificador|Div1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "decoder:Decodificador|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "procesador:ProcesadorComp|ALU:AluComp|Div0"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "procesador:ProcesadorComp|ALU:AluComp|Mult0"
+Info (12130): Elaborated megafunction instantiation "decoder:Decodificador|lpm_divide:Div1"
+Info (12133): Instantiated megafunction "decoder:Decodificador|lpm_divide:Div1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jem.tdf
+    Info (12023): Found entity 1: lpm_divide_jem
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_tlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_tlh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_s2f.tdf
+    Info (12023): Found entity 1: alt_u_div_s2f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info (12023): Found entity 1: add_sub_lkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info (12023): Found entity 1: add_sub_mkc
+Info (12130): Elaborated megafunction instantiation "decoder:Decodificador|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "decoder:Decodificador|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_7so.tdf
+    Info (12023): Found entity 1: lpm_divide_7so
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
+    Info (12023): Found entity 1: abs_divider_kbg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k2f.tdf
+    Info (12023): Found entity 1: alt_u_div_k2f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_gq9.tdf
+    Info (12023): Found entity 1: lpm_abs_gq9
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_0s9.tdf
+    Info (12023): Found entity 1: lpm_abs_0s9
+Info (12130): Elaborated megafunction instantiation "procesador:ProcesadorComp|ALU:AluComp|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "procesador:ProcesadorComp|ALU:AluComp|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "16"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3gm.tdf
+    Info (12023): Found entity 1: lpm_divide_3gm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dnh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_s5f.tdf
+    Info (12023): Found entity 1: alt_u_div_s5f
+Info (12130): Elaborated megafunction instantiation "procesador:ProcesadorComp|ALU:AluComp|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "procesador:ProcesadorComp|ALU:AluComp|lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_l8t.tdf
+    Info (12023): Found entity 1: mult_l8t
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[11]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r2[3]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[7]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r3[3]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[7]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r3[3]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[8]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r2[0]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[4]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r3[0]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[4]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r3[0]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[9]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r2[1]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[5]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r3[1]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[5]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r3[1]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[10]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r2[2]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[6]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r3[2]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[6]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|r3[2]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[0]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[0]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[1]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[1]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[2]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[2]"
+    Info (13026): Duplicate LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|out_direccion[3]" merged with LATCH primitive "procesador:ProcesadorComp|instructions:InstructionRegister|inmidiate[3]"
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13012): Latch procesador:ProcesadorComp|ALUOUT:AluOutComp|data[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal procesador:ProcesadorComp|control:ControlUnit|currentState.ExecuteS
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "visual3[6]" is stuck at GND
+    Warning (13410): Pin "visual3[9]" is stuck at GND
+    Warning (13410): Pin "v[0]" is stuck at GND
+    Warning (13410): Pin "v[1]" is stuck at GND
+    Warning (13410): Pin "v[2]" is stuck at GND
+    Warning (13410): Pin "v[3]" is stuck at GND
+    Warning (13410): Pin "v[4]" is stuck at GND
+    Warning (13410): Pin "v[5]" is stuck at GND
+    Warning (13410): Pin "v[6]" is stuck at GND
+    Warning (13410): Pin "v[7]" is stuck at GND
+    Warning (13410): Pin "v[8]" is stuck at GND
+    Warning (13410): Pin "v[9]" is stuck at GND
+    Warning (13410): Pin "v[10]" is stuck at GND
+    Warning (13410): Pin "v[11]" is stuck at GND
+    Warning (13410): Pin "v[12]" is stuck at GND
+    Warning (13410): Pin "v[13]" is stuck at GND
+    Warning (13410): Pin "v[14]" is stuck at GND
+    Warning (13410): Pin "v[15]" is stuck at GND
+    Warning (13410): Pin "dis3[0]" is stuck at VCC
+    Warning (13410): Pin "dis3[1]" is stuck at VCC
+    Warning (13410): Pin "dis3[2]" is stuck at VCC
+    Warning (13410): Pin "dis3[3]" is stuck at GND
+    Warning (13410): Pin "dis3[4]" is stuck at VCC
+    Warning (13410): Pin "dis3[5]" is stuck at VCC
+    Warning (13410): Pin "dis3[6]" is stuck at VCC
+Info (17049): 20 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 4280 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 83 output pins
+    Info (21061): Implemented 4194 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 77 warnings
+    Info: Peak virtual memory: 4688 megabytes
+    Info: Processing ended: Sun May 26 23:23:04 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:09
+
+

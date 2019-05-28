@@ -1,0 +1,15 @@
+
+State Machine - |pc_memory_control_tb|control:ControlUnit|currentState
+Name currentState.JumpS currentState.BranchS currentState.ALUWriteBackIS currentState.ExecuteIS currentState.ALUWriteBackS currentState.ExecuteS currentState.MemWriteS currentState.MemWriteBackS currentState.MemReadS currentState.MemAddrS currentState.DecodeS currentState.FetchS 
+currentState.FetchS 0 0 0 0 0 0 0 0 0 0 0 0 
+currentState.DecodeS 0 0 0 0 0 0 0 0 0 0 1 1 
+currentState.MemAddrS 0 0 0 0 0 0 0 0 0 1 0 1 
+currentState.MemReadS 0 0 0 0 0 0 0 0 1 0 0 1 
+currentState.MemWriteBackS 0 0 0 0 0 0 0 1 0 0 0 1 
+currentState.MemWriteS 0 0 0 0 0 0 1 0 0 0 0 1 
+currentState.ExecuteS 0 0 0 0 0 1 0 0 0 0 0 1 
+currentState.ALUWriteBackS 0 0 0 0 1 0 0 0 0 0 0 1 
+currentState.ExecuteIS 0 0 0 1 0 0 0 0 0 0 0 1 
+currentState.ALUWriteBackIS 0 0 1 0 0 0 0 0 0 0 0 1 
+currentState.BranchS 0 1 0 0 0 0 0 0 0 0 0 1 
+currentState.JumpS 1 0 0 0 0 0 0 0 0 0 0 1 

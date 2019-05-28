@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity A is
+port(
+	nuevo : in std_logic_vector(15 downto 0);
+	Astatic : out std_logic_vector(15 downto 0)
+);
+end A;
+
+architecture arc_A of A is
+signal Atmp : std_logic_vector(15 downto 0);
+begin
+	Astatic <= Atmp;
+end arc_A;

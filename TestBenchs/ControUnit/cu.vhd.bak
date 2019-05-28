@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity cu is
+port(
+	reloj : in std_logic;
+	code : in std_logic_vector(3 downto 0);
+);
+end cu;
+
+architecture arc_cu of cu is
+begin
+end arc_cu;

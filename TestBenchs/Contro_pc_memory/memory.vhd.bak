@@ -1,0 +1,33 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity memory is
+port(
+	clk : in std_logic;
+	sigread, sigwrite : in std_logic;
+	address : in std_logic_vector(15	downto 0);
+	data : in std_logic_vector(15 downto 0);
+	outdata : out std_logic_vector(15 downto 0)
+);
+end memory;
+
+architecture arc_memory of memory is
+type espacio is array (0 to 3999) of std_logic_vector(15 downto 0);
+signal ins_mem: espacio := ("0000000000000001", others => "0000000000000000");
+begin
+	process (clk, sigread, sigwrite, address, data, ins_mem) is
+	begin
+		if rising_edge(clk) then
+			outdata <= "0000000000000000";
+			if (sigread = '1') then
+				outdata <= ins_mem(to_integer(unsigned(address(11 downto 0))));
+			end if;
+			if (sigwrite = '1') then
+				ins_mem(to_integer(unsigned(address(11 downto 0)))) <= data;
+			end if;
+		end if;
+		
+	end process;
+end arc_memory;

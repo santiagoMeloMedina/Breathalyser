@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Santiago Melo\Desktop\Breath\TestBenchs\Contro_pc_memory\simulation\qsim
+vpc_memory_control_tb
+Z1 I?Y<mXWX_cg?J?2BBJV<Dj0
+Z2 V9VQ4bzN@iS<fW@0kgRWfh3
+Z3 dC:\Users\Santiago Melo\Desktop\Breath\TestBenchs\Contro_pc_memory\simulation\qsim
+Z4 w1558486911
+Z5 8pc_memory_control_tb.vo
+Z6 Fpc_memory_control_tb.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|pc_memory_control_tb.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 oVWF^49>mJXX0Fg@Ni5A32
+!s85 0
+Z11 !s108 1558486912.516000
+Z12 !s107 pc_memory_control_tb.vo|
+!s101 -O0
+vpc_memory_control_tb_vlg_check_tst
+!i10b 1
+Z13 !s100 ng2c[IdGQkXZA:KM?[d^H0
+Z14 IGm2oaolj0e_50GdbSf=NN3
+Z15 Ve=6A3BT1X:8Sz]mPGWGCl1
+R3
+Z16 w1558486908
+Z17 8pc_memory_control_tb.vt
+Z18 Fpc_memory_control_tb.vt
+L0 57
+R7
+r1
+!s85 0
+31
+Z19 !s108 1558486913.626000
+Z20 !s107 pc_memory_control_tb.vt|
+Z21 !s90 -work|work|pc_memory_control_tb.vt|
+!s101 -O0
+R9
+vpc_memory_control_tb_vlg_sample_tst
+!i10b 1
+Z22 !s100 dQhMfR^m=KR>g9ID?Qk?Q1
+Z23 I^bU^1;Kj]^<4`nSjiheYR2
+Z24 VDdfBSWk6fnhM2SOC_>Fe_0
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vpc_memory_control_tb_vlg_vec_tst
+!i10b 1
+Z25 !s100 93H38kn^<XI_FXG]mG9dj3
+Z26 IzNhV^adH?E[CFczof@b0i0
+Z27 VF7FHaR=ZB>W[?D>KE<5<42
+R3
+R16
+R17
+R18
+Z28 L0 868
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

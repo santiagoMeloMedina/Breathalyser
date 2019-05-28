@@ -1,0 +1,14 @@
+addi r15 r5 50
+addi r15 r0 11
+addi r15 r1 0
+addi r15 r2 0
+addi r15 r3 2
+brch r0 r1 12
+mult r1 r3 r4
+addi r4 r4 1
+add r4 r2 r2
+addi r1 r1 1
+jump 5
+sw r5 r2 0
+lw r5 r2 0
+jump 12

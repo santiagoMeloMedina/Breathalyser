@@ -1,0 +1,4 @@
+addi r15 r0 50
+addi r15 r1 2
+sw r0 r1 0
+lw r0 r2 0

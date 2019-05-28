@@ -1,0 +1,967 @@
+TimeQuest Timing Analyzer report for cu
+Tue May 14 13:59:56 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'reloj'
+ 12. Slow Model Hold: 'reloj'
+ 13. Slow Model Minimum Pulse Width: 'reloj'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'reloj'
+ 26. Fast Model Hold: 'reloj'
+ 27. Fast Model Minimum Pulse Width: 'reloj'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; cu                                                                ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; reloj      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { reloj } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 593.82 MHz ; 380.08 MHz      ; reloj      ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; reloj ; -0.684 ; -2.064        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; reloj ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; reloj ; -1.631 ; -16.295               ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'reloj'                                                                                                                                                   ;
++--------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                  ; To Node                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.684 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 1.722      ;
+; -0.654 ; control:ControlUnit|currentState.ExecuteIS ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 1.692      ;
+; -0.505 ; control:ControlUnit|currentState.FetchS    ; control:ControlUnit|currentState.DecodeS        ; reloj        ; reloj       ; 1.000        ; 0.000      ; 1.543      ;
+; -0.376 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.ExecuteIS      ; reloj        ; reloj       ; 1.000        ; 0.000      ; 1.414      ;
+; -0.376 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.BranchS        ; reloj        ; reloj       ; 1.000        ; 0.000      ; 1.414      ;
+; -0.373 ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 1.411      ;
+; -0.272 ; control:ControlUnit|currentState.MemReadS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 1.310      ;
+; -0.257 ; control:ControlUnit|currentState.ExecuteS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 1.295      ;
+; -0.056 ; control:ControlUnit|currentState.ExecuteS  ; control:ControlUnit|currentState.ALUWriteBackS  ; reloj        ; reloj       ; 1.000        ; 0.000      ; 1.094      ;
+; -0.040 ; control:ControlUnit|currentState.ExecuteIS ; control:ControlUnit|currentState.ALUWriteBackIS ; reloj        ; reloj       ; 1.000        ; 0.000      ; 1.078      ;
+; -0.027 ; control:ControlUnit|currentState.MemReadS  ; control:ControlUnit|currentState.MemWriteBackS  ; reloj        ; reloj       ; 1.000        ; 0.000      ; 1.065      ;
+; 0.099  ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.MemAddrS       ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.939      ;
+; 0.099  ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.JumpS          ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.939      ;
+; 0.101  ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.ExecuteS       ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.937      ;
+; 0.112  ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.MemReadS       ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.926      ;
+; 0.112  ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.MemWriteS      ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.926      ;
+; 0.307  ; control:ControlUnit|currentState.FetchS    ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.731      ;
++--------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'reloj'                                                                                                                                                   ;
++-------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                  ; To Node                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; control:ControlUnit|currentState.FetchS    ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.640 ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.MemReadS       ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.926      ;
+; 0.640 ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.MemWriteS      ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.926      ;
+; 0.651 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.ExecuteS       ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.937      ;
+; 0.653 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.MemAddrS       ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.939      ;
+; 0.653 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.JumpS          ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.939      ;
+; 0.779 ; control:ControlUnit|currentState.MemReadS  ; control:ControlUnit|currentState.MemWriteBackS  ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.065      ;
+; 0.792 ; control:ControlUnit|currentState.ExecuteIS ; control:ControlUnit|currentState.ALUWriteBackIS ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.078      ;
+; 0.808 ; control:ControlUnit|currentState.ExecuteS  ; control:ControlUnit|currentState.ALUWriteBackS  ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.094      ;
+; 1.009 ; control:ControlUnit|currentState.ExecuteS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.295      ;
+; 1.024 ; control:ControlUnit|currentState.MemReadS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.310      ;
+; 1.125 ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.411      ;
+; 1.128 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.ExecuteIS      ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.414      ;
+; 1.128 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.BranchS        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.414      ;
+; 1.257 ; control:ControlUnit|currentState.FetchS    ; control:ControlUnit|currentState.DecodeS        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.543      ;
+; 1.406 ; control:ControlUnit|currentState.ExecuteIS ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.692      ;
+; 1.436 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.722      ;
++-------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'reloj'                                                                                          ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                          ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; reloj ; Rise       ; reloj                                           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.ALUWriteBackIS ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.ALUWriteBackIS ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.ALUWriteBackS  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.ALUWriteBackS  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.BranchS        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.BranchS        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.DecodeS        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.DecodeS        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.ExecuteIS      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.ExecuteIS      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.ExecuteS       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.ExecuteS       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.FetchS         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.FetchS         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.JumpS          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.JumpS          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.MemAddrS       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.MemAddrS       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.MemReadS       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.MemReadS       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.MemWriteBackS  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.MemWriteBackS  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.MemWriteS      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.MemWriteS      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.ALUWriteBackIS|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.ALUWriteBackIS|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.ALUWriteBackS|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.ALUWriteBackS|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.BranchS|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.BranchS|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.DecodeS|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.DecodeS|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.ExecuteIS|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.ExecuteIS|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.ExecuteS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.ExecuteS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.FetchS|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.FetchS|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.JumpS|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.JumpS|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.MemAddrS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.MemAddrS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.MemReadS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.MemReadS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.MemWriteBackS|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.MemWriteBackS|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.MemWriteS|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.MemWriteS|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; reloj|combout                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; reloj|combout                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; reloj~clkctrl|inclk[0]                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; reloj~clkctrl|inclk[0]                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; reloj~clkctrl|outclk                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; reloj~clkctrl|outclk                            ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; code[*]   ; reloj      ; 4.714 ; 4.714 ; Rise       ; reloj           ;
+;  code[0]  ; reloj      ; 3.553 ; 3.553 ; Rise       ; reloj           ;
+;  code[1]  ; reloj      ; 4.574 ; 4.574 ; Rise       ; reloj           ;
+;  code[2]  ; reloj      ; 4.714 ; 4.714 ; Rise       ; reloj           ;
+;  code[3]  ; reloj      ; 4.610 ; 4.610 ; Rise       ; reloj           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; code[*]   ; reloj      ; -3.126 ; -3.126 ; Rise       ; reloj           ;
+;  code[0]  ; reloj      ; -3.126 ; -3.126 ; Rise       ; reloj           ;
+;  code[1]  ; reloj      ; -3.448 ; -3.448 ; Rise       ; reloj           ;
+;  code[2]  ; reloj      ; -3.377 ; -3.377 ; Rise       ; reloj           ;
+;  code[3]  ; reloj      ; -3.183 ; -3.183 ; Rise       ; reloj           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; info[*]   ; reloj      ; 9.217 ; 9.217 ; Rise       ; reloj           ;
+;  info[0]  ; reloj      ; 8.009 ; 8.009 ; Rise       ; reloj           ;
+;  info[1]  ; reloj      ; 7.237 ; 7.237 ; Rise       ; reloj           ;
+;  info[2]  ; reloj      ; 8.896 ; 8.896 ; Rise       ; reloj           ;
+;  info[3]  ; reloj      ; 8.010 ; 8.010 ; Rise       ; reloj           ;
+;  info[4]  ; reloj      ; 7.184 ; 7.184 ; Rise       ; reloj           ;
+;  info[5]  ; reloj      ; 7.734 ; 7.734 ; Rise       ; reloj           ;
+;  info[7]  ; reloj      ; 6.933 ; 6.933 ; Rise       ; reloj           ;
+;  info[8]  ; reloj      ; 6.910 ; 6.910 ; Rise       ; reloj           ;
+;  info[10] ; reloj      ; 7.149 ; 7.149 ; Rise       ; reloj           ;
+;  info[11] ; reloj      ; 8.396 ; 8.396 ; Rise       ; reloj           ;
+;  info[12] ; reloj      ; 9.217 ; 9.217 ; Rise       ; reloj           ;
+;  info[13] ; reloj      ; 7.214 ; 7.214 ; Rise       ; reloj           ;
+;  info[14] ; reloj      ; 6.896 ; 6.896 ; Rise       ; reloj           ;
+;  info[15] ; reloj      ; 6.898 ; 6.898 ; Rise       ; reloj           ;
+;  info[16] ; reloj      ; 8.171 ; 8.171 ; Rise       ; reloj           ;
+;  info[17] ; reloj      ; 7.923 ; 7.923 ; Rise       ; reloj           ;
+;  info[18] ; reloj      ; 8.159 ; 8.159 ; Rise       ; reloj           ;
+;  info[19] ; reloj      ; 6.903 ; 6.903 ; Rise       ; reloj           ;
+;  info[20] ; reloj      ; 9.105 ; 9.105 ; Rise       ; reloj           ;
+;  info[21] ; reloj      ; 6.928 ; 6.928 ; Rise       ; reloj           ;
+;  info[22] ; reloj      ; 6.914 ; 6.914 ; Rise       ; reloj           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; info[*]   ; reloj      ; 6.896 ; 6.896 ; Rise       ; reloj           ;
+;  info[0]  ; reloj      ; 8.009 ; 8.009 ; Rise       ; reloj           ;
+;  info[1]  ; reloj      ; 7.237 ; 7.237 ; Rise       ; reloj           ;
+;  info[2]  ; reloj      ; 8.213 ; 8.213 ; Rise       ; reloj           ;
+;  info[3]  ; reloj      ; 8.010 ; 8.010 ; Rise       ; reloj           ;
+;  info[4]  ; reloj      ; 7.184 ; 7.184 ; Rise       ; reloj           ;
+;  info[5]  ; reloj      ; 7.423 ; 7.423 ; Rise       ; reloj           ;
+;  info[7]  ; reloj      ; 6.933 ; 6.933 ; Rise       ; reloj           ;
+;  info[8]  ; reloj      ; 6.910 ; 6.910 ; Rise       ; reloj           ;
+;  info[10] ; reloj      ; 7.149 ; 7.149 ; Rise       ; reloj           ;
+;  info[11] ; reloj      ; 7.363 ; 7.363 ; Rise       ; reloj           ;
+;  info[12] ; reloj      ; 7.557 ; 7.557 ; Rise       ; reloj           ;
+;  info[13] ; reloj      ; 7.214 ; 7.214 ; Rise       ; reloj           ;
+;  info[14] ; reloj      ; 6.896 ; 6.896 ; Rise       ; reloj           ;
+;  info[15] ; reloj      ; 6.898 ; 6.898 ; Rise       ; reloj           ;
+;  info[16] ; reloj      ; 7.758 ; 7.758 ; Rise       ; reloj           ;
+;  info[17] ; reloj      ; 7.915 ; 7.915 ; Rise       ; reloj           ;
+;  info[18] ; reloj      ; 7.935 ; 7.935 ; Rise       ; reloj           ;
+;  info[19] ; reloj      ; 6.903 ; 6.903 ; Rise       ; reloj           ;
+;  info[20] ; reloj      ; 7.637 ; 7.637 ; Rise       ; reloj           ;
+;  info[21] ; reloj      ; 6.928 ; 6.928 ; Rise       ; reloj           ;
+;  info[22] ; reloj      ; 6.914 ; 6.914 ; Rise       ; reloj           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; code[0]    ; info[0]     ; 10.782 ;        ;        ; 10.782 ;
+; code[0]    ; info[20]    ;        ; 10.965 ; 10.965 ;        ;
+; code[1]    ; info[0]     ; 10.601 ;        ;        ; 10.601 ;
+; code[1]    ; info[1]     ;        ; 9.702  ; 9.702  ;        ;
+; code[1]    ; info[2]     ; 10.991 ; 10.991 ; 10.991 ; 10.991 ;
+; code[1]    ; info[3]     ; 10.134 ;        ;        ; 10.134 ;
+; code[1]    ; info[12]    ; 11.316 ;        ;        ; 11.316 ;
+; code[1]    ; info[20]    ; 10.782 ; 10.782 ; 10.782 ; 10.782 ;
+; code[2]    ; info[0]     ; 10.794 ; 10.794 ; 10.794 ; 10.794 ;
+; code[2]    ; info[1]     ; 9.901  ; 9.901  ; 9.901  ; 9.901  ;
+; code[2]    ; info[2]     ; 11.152 ; 11.152 ; 11.152 ; 11.152 ;
+; code[2]    ; info[3]     ;        ; 10.243 ; 10.243 ;        ;
+; code[2]    ; info[12]    ; 11.508 ; 11.508 ; 11.508 ; 11.508 ;
+; code[2]    ; info[20]    ; 10.981 ; 10.981 ; 10.981 ; 10.981 ;
+; code[3]    ; info[0]     ; 10.627 ; 10.627 ; 10.627 ; 10.627 ;
+; code[3]    ; info[1]     ; 9.701  ; 9.701  ; 9.701  ; 9.701  ;
+; code[3]    ; info[2]     ; 11.023 ; 11.023 ; 11.023 ; 11.023 ;
+; code[3]    ; info[3]     ; 10.171 ;        ;        ; 10.171 ;
+; code[3]    ; info[12]    ; 11.338 ; 11.338 ; 11.338 ; 11.338 ;
+; code[3]    ; info[20]    ; 10.814 ; 10.814 ; 10.814 ; 10.814 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; code[0]    ; info[0]     ; 10.782 ;        ;        ; 10.782 ;
+; code[0]    ; info[20]    ;        ; 10.965 ; 10.965 ;        ;
+; code[1]    ; info[0]     ; 10.601 ;        ;        ; 10.601 ;
+; code[1]    ; info[1]     ;        ; 9.702  ; 9.702  ;        ;
+; code[1]    ; info[2]     ; 10.991 ; 10.991 ; 10.991 ; 10.991 ;
+; code[1]    ; info[3]     ; 10.134 ;        ;        ; 10.134 ;
+; code[1]    ; info[12]    ; 11.316 ;        ;        ; 11.316 ;
+; code[1]    ; info[20]    ; 10.782 ; 10.782 ; 10.782 ; 10.782 ;
+; code[2]    ; info[0]     ; 10.794 ; 10.794 ; 10.794 ; 10.794 ;
+; code[2]    ; info[1]     ; 9.901  ; 9.901  ; 9.901  ; 9.901  ;
+; code[2]    ; info[2]     ; 11.152 ; 11.152 ; 11.152 ; 11.152 ;
+; code[2]    ; info[3]     ;        ; 10.243 ; 10.243 ;        ;
+; code[2]    ; info[12]    ; 11.508 ; 11.508 ; 11.508 ; 11.508 ;
+; code[2]    ; info[20]    ; 10.981 ; 10.981 ; 10.981 ; 10.981 ;
+; code[3]    ; info[0]     ; 10.627 ; 10.627 ; 10.627 ; 10.627 ;
+; code[3]    ; info[1]     ; 9.701  ; 9.701  ; 9.701  ; 9.701  ;
+; code[3]    ; info[2]     ; 11.023 ; 11.023 ; 11.023 ; 11.023 ;
+; code[3]    ; info[3]     ; 10.171 ;        ;        ; 10.171 ;
+; code[3]    ; info[12]    ; 11.338 ; 11.338 ; 11.338 ; 11.338 ;
+; code[3]    ; info[20]    ; 10.814 ; 10.814 ; 10.814 ; 10.814 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++-------------------------------+
+; Fast Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; reloj ; 0.298 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; reloj ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; reloj ; -1.380 ; -13.380               ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'reloj'                                                                                                                                                  ;
++-------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                  ; To Node                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.298 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.734      ;
+; 0.311 ; control:ControlUnit|currentState.ExecuteIS ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.721      ;
+; 0.359 ; control:ControlUnit|currentState.FetchS    ; control:ControlUnit|currentState.DecodeS        ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.673      ;
+; 0.436 ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.596      ;
+; 0.453 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.BranchS        ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.579      ;
+; 0.455 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.ExecuteIS      ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.577      ;
+; 0.501 ; control:ControlUnit|currentState.ExecuteS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.531      ;
+; 0.504 ; control:ControlUnit|currentState.MemReadS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.528      ;
+; 0.533 ; control:ControlUnit|currentState.ExecuteS  ; control:ControlUnit|currentState.ALUWriteBackS  ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.499      ;
+; 0.540 ; control:ControlUnit|currentState.ExecuteIS ; control:ControlUnit|currentState.ALUWriteBackIS ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.492      ;
+; 0.549 ; control:ControlUnit|currentState.MemReadS  ; control:ControlUnit|currentState.MemWriteBackS  ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.483      ;
+; 0.623 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.MemAddrS       ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.409      ;
+; 0.623 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.JumpS          ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.409      ;
+; 0.625 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.ExecuteS       ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.407      ;
+; 0.628 ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.MemReadS       ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.404      ;
+; 0.628 ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.MemWriteS      ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.404      ;
+; 0.665 ; control:ControlUnit|currentState.FetchS    ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 1.000        ; 0.000      ; 0.367      ;
++-------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'reloj'                                                                                                                                                   ;
++-------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                  ; To Node                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; control:ControlUnit|currentState.FetchS    ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.252 ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.MemReadS       ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.404      ;
+; 0.252 ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.MemWriteS      ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.404      ;
+; 0.255 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.ExecuteS       ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.407      ;
+; 0.257 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.MemAddrS       ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.409      ;
+; 0.257 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.JumpS          ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.409      ;
+; 0.331 ; control:ControlUnit|currentState.MemReadS  ; control:ControlUnit|currentState.MemWriteBackS  ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.483      ;
+; 0.340 ; control:ControlUnit|currentState.ExecuteIS ; control:ControlUnit|currentState.ALUWriteBackIS ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.492      ;
+; 0.347 ; control:ControlUnit|currentState.ExecuteS  ; control:ControlUnit|currentState.ALUWriteBackS  ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.499      ;
+; 0.376 ; control:ControlUnit|currentState.MemReadS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.528      ;
+; 0.379 ; control:ControlUnit|currentState.ExecuteS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.531      ;
+; 0.425 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.ExecuteIS      ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.577      ;
+; 0.427 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.BranchS        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.579      ;
+; 0.444 ; control:ControlUnit|currentState.MemAddrS  ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.596      ;
+; 0.521 ; control:ControlUnit|currentState.FetchS    ; control:ControlUnit|currentState.DecodeS        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.673      ;
+; 0.569 ; control:ControlUnit|currentState.ExecuteIS ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.721      ;
+; 0.582 ; control:ControlUnit|currentState.DecodeS   ; control:ControlUnit|currentState.FetchS         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 0.734      ;
++-------+--------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'reloj'                                                                                          ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                          ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; reloj ; Rise       ; reloj                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.ALUWriteBackIS ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.ALUWriteBackIS ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.ALUWriteBackS  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.ALUWriteBackS  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.BranchS        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.BranchS        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.DecodeS        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.DecodeS        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.ExecuteIS      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.ExecuteIS      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.ExecuteS       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.ExecuteS       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.FetchS         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.FetchS         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.JumpS          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.JumpS          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.MemAddrS       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.MemAddrS       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.MemReadS       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.MemReadS       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.MemWriteBackS  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.MemWriteBackS  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; reloj ; Rise       ; control:ControlUnit|currentState.MemWriteS      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; reloj ; Rise       ; control:ControlUnit|currentState.MemWriteS      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.ALUWriteBackIS|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.ALUWriteBackIS|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.ALUWriteBackS|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.ALUWriteBackS|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.BranchS|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.BranchS|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.DecodeS|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.DecodeS|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.ExecuteIS|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.ExecuteIS|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.ExecuteS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.ExecuteS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.FetchS|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.FetchS|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.JumpS|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.JumpS|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.MemAddrS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.MemAddrS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.MemReadS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.MemReadS|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.MemWriteBackS|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.MemWriteBackS|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; ControlUnit|currentState.MemWriteS|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; ControlUnit|currentState.MemWriteS|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; reloj|combout                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; reloj|combout                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; reloj~clkctrl|inclk[0]                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; reloj~clkctrl|inclk[0]                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; reloj~clkctrl|outclk                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; reloj~clkctrl|outclk                            ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; code[*]   ; reloj      ; 2.064 ; 2.064 ; Rise       ; reloj           ;
+;  code[0]  ; reloj      ; 1.633 ; 1.633 ; Rise       ; reloj           ;
+;  code[1]  ; reloj      ; 2.005 ; 2.005 ; Rise       ; reloj           ;
+;  code[2]  ; reloj      ; 2.064 ; 2.064 ; Rise       ; reloj           ;
+;  code[3]  ; reloj      ; 2.029 ; 2.029 ; Rise       ; reloj           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; code[*]   ; reloj      ; -1.476 ; -1.476 ; Rise       ; reloj           ;
+;  code[0]  ; reloj      ; -1.476 ; -1.476 ; Rise       ; reloj           ;
+;  code[1]  ; reloj      ; -1.563 ; -1.563 ; Rise       ; reloj           ;
+;  code[2]  ; reloj      ; -1.550 ; -1.550 ; Rise       ; reloj           ;
+;  code[3]  ; reloj      ; -1.493 ; -1.493 ; Rise       ; reloj           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; info[*]   ; reloj      ; 4.628 ; 4.628 ; Rise       ; reloj           ;
+;  info[0]  ; reloj      ; 4.218 ; 4.218 ; Rise       ; reloj           ;
+;  info[1]  ; reloj      ; 3.881 ; 3.881 ; Rise       ; reloj           ;
+;  info[2]  ; reloj      ; 4.432 ; 4.432 ; Rise       ; reloj           ;
+;  info[3]  ; reloj      ; 4.219 ; 4.219 ; Rise       ; reloj           ;
+;  info[4]  ; reloj      ; 3.833 ; 3.833 ; Rise       ; reloj           ;
+;  info[5]  ; reloj      ; 4.069 ; 4.069 ; Rise       ; reloj           ;
+;  info[7]  ; reloj      ; 3.760 ; 3.760 ; Rise       ; reloj           ;
+;  info[8]  ; reloj      ; 3.739 ; 3.739 ; Rise       ; reloj           ;
+;  info[10] ; reloj      ; 3.819 ; 3.819 ; Rise       ; reloj           ;
+;  info[11] ; reloj      ; 4.308 ; 4.308 ; Rise       ; reloj           ;
+;  info[12] ; reloj      ; 4.612 ; 4.612 ; Rise       ; reloj           ;
+;  info[13] ; reloj      ; 3.863 ; 3.863 ; Rise       ; reloj           ;
+;  info[14] ; reloj      ; 3.726 ; 3.726 ; Rise       ; reloj           ;
+;  info[15] ; reloj      ; 3.728 ; 3.728 ; Rise       ; reloj           ;
+;  info[16] ; reloj      ; 4.190 ; 4.190 ; Rise       ; reloj           ;
+;  info[17] ; reloj      ; 4.104 ; 4.104 ; Rise       ; reloj           ;
+;  info[18] ; reloj      ; 4.199 ; 4.199 ; Rise       ; reloj           ;
+;  info[19] ; reloj      ; 3.730 ; 3.730 ; Rise       ; reloj           ;
+;  info[20] ; reloj      ; 4.628 ; 4.628 ; Rise       ; reloj           ;
+;  info[21] ; reloj      ; 3.752 ; 3.752 ; Rise       ; reloj           ;
+;  info[22] ; reloj      ; 3.735 ; 3.735 ; Rise       ; reloj           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; info[*]   ; reloj      ; 3.726 ; 3.726 ; Rise       ; reloj           ;
+;  info[0]  ; reloj      ; 4.218 ; 4.218 ; Rise       ; reloj           ;
+;  info[1]  ; reloj      ; 3.881 ; 3.881 ; Rise       ; reloj           ;
+;  info[2]  ; reloj      ; 4.182 ; 4.182 ; Rise       ; reloj           ;
+;  info[3]  ; reloj      ; 4.219 ; 4.219 ; Rise       ; reloj           ;
+;  info[4]  ; reloj      ; 3.833 ; 3.833 ; Rise       ; reloj           ;
+;  info[5]  ; reloj      ; 3.931 ; 3.931 ; Rise       ; reloj           ;
+;  info[7]  ; reloj      ; 3.760 ; 3.760 ; Rise       ; reloj           ;
+;  info[8]  ; reloj      ; 3.739 ; 3.739 ; Rise       ; reloj           ;
+;  info[10] ; reloj      ; 3.819 ; 3.819 ; Rise       ; reloj           ;
+;  info[11] ; reloj      ; 3.990 ; 3.990 ; Rise       ; reloj           ;
+;  info[12] ; reloj      ; 4.026 ; 4.026 ; Rise       ; reloj           ;
+;  info[13] ; reloj      ; 3.863 ; 3.863 ; Rise       ; reloj           ;
+;  info[14] ; reloj      ; 3.726 ; 3.726 ; Rise       ; reloj           ;
+;  info[15] ; reloj      ; 3.728 ; 3.728 ; Rise       ; reloj           ;
+;  info[16] ; reloj      ; 4.037 ; 4.037 ; Rise       ; reloj           ;
+;  info[17] ; reloj      ; 4.078 ; 4.078 ; Rise       ; reloj           ;
+;  info[18] ; reloj      ; 4.094 ; 4.094 ; Rise       ; reloj           ;
+;  info[19] ; reloj      ; 3.730 ; 3.730 ; Rise       ; reloj           ;
+;  info[20] ; reloj      ; 4.066 ; 4.066 ; Rise       ; reloj           ;
+;  info[21] ; reloj      ; 3.752 ; 3.752 ; Rise       ; reloj           ;
+;  info[22] ; reloj      ; 3.735 ; 3.735 ; Rise       ; reloj           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; code[0]    ; info[0]     ; 5.506 ;       ;       ; 5.506 ;
+; code[0]    ; info[20]    ;       ; 5.576 ; 5.576 ;       ;
+; code[1]    ; info[0]     ; 5.431 ;       ;       ; 5.431 ;
+; code[1]    ; info[1]     ;       ; 5.041 ; 5.041 ;       ;
+; code[1]    ; info[2]     ; 5.483 ; 5.483 ; 5.483 ; 5.483 ;
+; code[1]    ; info[3]     ; 5.267 ;       ;       ; 5.267 ;
+; code[1]    ; info[12]    ; 5.667 ;       ;       ; 5.667 ;
+; code[1]    ; info[20]    ; 5.508 ; 5.508 ; 5.508 ; 5.508 ;
+; code[2]    ; info[0]     ; 5.483 ; 5.483 ; 5.483 ; 5.483 ;
+; code[2]    ; info[1]     ; 5.098 ; 5.098 ; 5.098 ; 5.098 ;
+; code[2]    ; info[2]     ; 5.540 ; 5.540 ; 5.540 ; 5.540 ;
+; code[2]    ; info[3]     ;       ; 5.325 ; 5.325 ;       ;
+; code[2]    ; info[12]    ; 5.715 ; 5.715 ; 5.715 ; 5.715 ;
+; code[2]    ; info[20]    ; 5.559 ; 5.559 ; 5.559 ; 5.559 ;
+; code[3]    ; info[0]     ; 5.446 ; 5.446 ; 5.446 ; 5.446 ;
+; code[3]    ; info[1]     ; 5.043 ; 5.043 ; 5.043 ; 5.043 ;
+; code[3]    ; info[2]     ; 5.503 ; 5.503 ; 5.503 ; 5.503 ;
+; code[3]    ; info[3]     ; 5.316 ;       ;       ; 5.316 ;
+; code[3]    ; info[12]    ; 5.676 ; 5.676 ; 5.676 ; 5.676 ;
+; code[3]    ; info[20]    ; 5.527 ; 5.527 ; 5.527 ; 5.527 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; code[0]    ; info[0]     ; 5.506 ;       ;       ; 5.506 ;
+; code[0]    ; info[20]    ;       ; 5.576 ; 5.576 ;       ;
+; code[1]    ; info[0]     ; 5.431 ;       ;       ; 5.431 ;
+; code[1]    ; info[1]     ;       ; 5.041 ; 5.041 ;       ;
+; code[1]    ; info[2]     ; 5.483 ; 5.483 ; 5.483 ; 5.483 ;
+; code[1]    ; info[3]     ; 5.267 ;       ;       ; 5.267 ;
+; code[1]    ; info[12]    ; 5.667 ;       ;       ; 5.667 ;
+; code[1]    ; info[20]    ; 5.508 ; 5.508 ; 5.508 ; 5.508 ;
+; code[2]    ; info[0]     ; 5.483 ; 5.483 ; 5.483 ; 5.483 ;
+; code[2]    ; info[1]     ; 5.098 ; 5.098 ; 5.098 ; 5.098 ;
+; code[2]    ; info[2]     ; 5.540 ; 5.540 ; 5.540 ; 5.540 ;
+; code[2]    ; info[3]     ;       ; 5.325 ; 5.325 ;       ;
+; code[2]    ; info[12]    ; 5.715 ; 5.715 ; 5.715 ; 5.715 ;
+; code[2]    ; info[20]    ; 5.559 ; 5.559 ; 5.559 ; 5.559 ;
+; code[3]    ; info[0]     ; 5.446 ; 5.446 ; 5.446 ; 5.446 ;
+; code[3]    ; info[1]     ; 5.043 ; 5.043 ; 5.043 ; 5.043 ;
+; code[3]    ; info[2]     ; 5.503 ; 5.503 ; 5.503 ; 5.503 ;
+; code[3]    ; info[3]     ; 5.316 ;       ;       ; 5.316 ;
+; code[3]    ; info[12]    ; 5.676 ; 5.676 ; 5.676 ; 5.676 ;
+; code[3]    ; info[20]    ; 5.527 ; 5.527 ; 5.527 ; 5.527 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -0.684 ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  reloj           ; -0.684 ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -2.064 ; 0.0   ; 0.0      ; 0.0     ; -16.295             ;
+;  reloj           ; -2.064 ; 0.000 ; N/A      ; N/A     ; -16.295             ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; code[*]   ; reloj      ; 4.714 ; 4.714 ; Rise       ; reloj           ;
+;  code[0]  ; reloj      ; 3.553 ; 3.553 ; Rise       ; reloj           ;
+;  code[1]  ; reloj      ; 4.574 ; 4.574 ; Rise       ; reloj           ;
+;  code[2]  ; reloj      ; 4.714 ; 4.714 ; Rise       ; reloj           ;
+;  code[3]  ; reloj      ; 4.610 ; 4.610 ; Rise       ; reloj           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; code[*]   ; reloj      ; -1.476 ; -1.476 ; Rise       ; reloj           ;
+;  code[0]  ; reloj      ; -1.476 ; -1.476 ; Rise       ; reloj           ;
+;  code[1]  ; reloj      ; -1.563 ; -1.563 ; Rise       ; reloj           ;
+;  code[2]  ; reloj      ; -1.550 ; -1.550 ; Rise       ; reloj           ;
+;  code[3]  ; reloj      ; -1.493 ; -1.493 ; Rise       ; reloj           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; info[*]   ; reloj      ; 9.217 ; 9.217 ; Rise       ; reloj           ;
+;  info[0]  ; reloj      ; 8.009 ; 8.009 ; Rise       ; reloj           ;
+;  info[1]  ; reloj      ; 7.237 ; 7.237 ; Rise       ; reloj           ;
+;  info[2]  ; reloj      ; 8.896 ; 8.896 ; Rise       ; reloj           ;
+;  info[3]  ; reloj      ; 8.010 ; 8.010 ; Rise       ; reloj           ;
+;  info[4]  ; reloj      ; 7.184 ; 7.184 ; Rise       ; reloj           ;
+;  info[5]  ; reloj      ; 7.734 ; 7.734 ; Rise       ; reloj           ;
+;  info[7]  ; reloj      ; 6.933 ; 6.933 ; Rise       ; reloj           ;
+;  info[8]  ; reloj      ; 6.910 ; 6.910 ; Rise       ; reloj           ;
+;  info[10] ; reloj      ; 7.149 ; 7.149 ; Rise       ; reloj           ;
+;  info[11] ; reloj      ; 8.396 ; 8.396 ; Rise       ; reloj           ;
+;  info[12] ; reloj      ; 9.217 ; 9.217 ; Rise       ; reloj           ;
+;  info[13] ; reloj      ; 7.214 ; 7.214 ; Rise       ; reloj           ;
+;  info[14] ; reloj      ; 6.896 ; 6.896 ; Rise       ; reloj           ;
+;  info[15] ; reloj      ; 6.898 ; 6.898 ; Rise       ; reloj           ;
+;  info[16] ; reloj      ; 8.171 ; 8.171 ; Rise       ; reloj           ;
+;  info[17] ; reloj      ; 7.923 ; 7.923 ; Rise       ; reloj           ;
+;  info[18] ; reloj      ; 8.159 ; 8.159 ; Rise       ; reloj           ;
+;  info[19] ; reloj      ; 6.903 ; 6.903 ; Rise       ; reloj           ;
+;  info[20] ; reloj      ; 9.105 ; 9.105 ; Rise       ; reloj           ;
+;  info[21] ; reloj      ; 6.928 ; 6.928 ; Rise       ; reloj           ;
+;  info[22] ; reloj      ; 6.914 ; 6.914 ; Rise       ; reloj           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; info[*]   ; reloj      ; 3.726 ; 3.726 ; Rise       ; reloj           ;
+;  info[0]  ; reloj      ; 4.218 ; 4.218 ; Rise       ; reloj           ;
+;  info[1]  ; reloj      ; 3.881 ; 3.881 ; Rise       ; reloj           ;
+;  info[2]  ; reloj      ; 4.182 ; 4.182 ; Rise       ; reloj           ;
+;  info[3]  ; reloj      ; 4.219 ; 4.219 ; Rise       ; reloj           ;
+;  info[4]  ; reloj      ; 3.833 ; 3.833 ; Rise       ; reloj           ;
+;  info[5]  ; reloj      ; 3.931 ; 3.931 ; Rise       ; reloj           ;
+;  info[7]  ; reloj      ; 3.760 ; 3.760 ; Rise       ; reloj           ;
+;  info[8]  ; reloj      ; 3.739 ; 3.739 ; Rise       ; reloj           ;
+;  info[10] ; reloj      ; 3.819 ; 3.819 ; Rise       ; reloj           ;
+;  info[11] ; reloj      ; 3.990 ; 3.990 ; Rise       ; reloj           ;
+;  info[12] ; reloj      ; 4.026 ; 4.026 ; Rise       ; reloj           ;
+;  info[13] ; reloj      ; 3.863 ; 3.863 ; Rise       ; reloj           ;
+;  info[14] ; reloj      ; 3.726 ; 3.726 ; Rise       ; reloj           ;
+;  info[15] ; reloj      ; 3.728 ; 3.728 ; Rise       ; reloj           ;
+;  info[16] ; reloj      ; 4.037 ; 4.037 ; Rise       ; reloj           ;
+;  info[17] ; reloj      ; 4.078 ; 4.078 ; Rise       ; reloj           ;
+;  info[18] ; reloj      ; 4.094 ; 4.094 ; Rise       ; reloj           ;
+;  info[19] ; reloj      ; 3.730 ; 3.730 ; Rise       ; reloj           ;
+;  info[20] ; reloj      ; 4.066 ; 4.066 ; Rise       ; reloj           ;
+;  info[21] ; reloj      ; 3.752 ; 3.752 ; Rise       ; reloj           ;
+;  info[22] ; reloj      ; 3.735 ; 3.735 ; Rise       ; reloj           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Progagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; code[0]    ; info[0]     ; 10.782 ;        ;        ; 10.782 ;
+; code[0]    ; info[20]    ;        ; 10.965 ; 10.965 ;        ;
+; code[1]    ; info[0]     ; 10.601 ;        ;        ; 10.601 ;
+; code[1]    ; info[1]     ;        ; 9.702  ; 9.702  ;        ;
+; code[1]    ; info[2]     ; 10.991 ; 10.991 ; 10.991 ; 10.991 ;
+; code[1]    ; info[3]     ; 10.134 ;        ;        ; 10.134 ;
+; code[1]    ; info[12]    ; 11.316 ;        ;        ; 11.316 ;
+; code[1]    ; info[20]    ; 10.782 ; 10.782 ; 10.782 ; 10.782 ;
+; code[2]    ; info[0]     ; 10.794 ; 10.794 ; 10.794 ; 10.794 ;
+; code[2]    ; info[1]     ; 9.901  ; 9.901  ; 9.901  ; 9.901  ;
+; code[2]    ; info[2]     ; 11.152 ; 11.152 ; 11.152 ; 11.152 ;
+; code[2]    ; info[3]     ;        ; 10.243 ; 10.243 ;        ;
+; code[2]    ; info[12]    ; 11.508 ; 11.508 ; 11.508 ; 11.508 ;
+; code[2]    ; info[20]    ; 10.981 ; 10.981 ; 10.981 ; 10.981 ;
+; code[3]    ; info[0]     ; 10.627 ; 10.627 ; 10.627 ; 10.627 ;
+; code[3]    ; info[1]     ; 9.701  ; 9.701  ; 9.701  ; 9.701  ;
+; code[3]    ; info[2]     ; 11.023 ; 11.023 ; 11.023 ; 11.023 ;
+; code[3]    ; info[3]     ; 10.171 ;        ;        ; 10.171 ;
+; code[3]    ; info[12]    ; 11.338 ; 11.338 ; 11.338 ; 11.338 ;
+; code[3]    ; info[20]    ; 10.814 ; 10.814 ; 10.814 ; 10.814 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; code[0]    ; info[0]     ; 5.506 ;       ;       ; 5.506 ;
+; code[0]    ; info[20]    ;       ; 5.576 ; 5.576 ;       ;
+; code[1]    ; info[0]     ; 5.431 ;       ;       ; 5.431 ;
+; code[1]    ; info[1]     ;       ; 5.041 ; 5.041 ;       ;
+; code[1]    ; info[2]     ; 5.483 ; 5.483 ; 5.483 ; 5.483 ;
+; code[1]    ; info[3]     ; 5.267 ;       ;       ; 5.267 ;
+; code[1]    ; info[12]    ; 5.667 ;       ;       ; 5.667 ;
+; code[1]    ; info[20]    ; 5.508 ; 5.508 ; 5.508 ; 5.508 ;
+; code[2]    ; info[0]     ; 5.483 ; 5.483 ; 5.483 ; 5.483 ;
+; code[2]    ; info[1]     ; 5.098 ; 5.098 ; 5.098 ; 5.098 ;
+; code[2]    ; info[2]     ; 5.540 ; 5.540 ; 5.540 ; 5.540 ;
+; code[2]    ; info[3]     ;       ; 5.325 ; 5.325 ;       ;
+; code[2]    ; info[12]    ; 5.715 ; 5.715 ; 5.715 ; 5.715 ;
+; code[2]    ; info[20]    ; 5.559 ; 5.559 ; 5.559 ; 5.559 ;
+; code[3]    ; info[0]     ; 5.446 ; 5.446 ; 5.446 ; 5.446 ;
+; code[3]    ; info[1]     ; 5.043 ; 5.043 ; 5.043 ; 5.043 ;
+; code[3]    ; info[2]     ; 5.503 ; 5.503 ; 5.503 ; 5.503 ;
+; code[3]    ; info[3]     ; 5.316 ;       ;       ; 5.316 ;
+; code[3]    ; info[12]    ; 5.676 ; 5.676 ; 5.676 ; 5.676 ;
+; code[3]    ; info[20]    ; 5.527 ; 5.527 ; 5.527 ; 5.527 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; reloj      ; reloj    ; 17       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; reloj      ; reloj    ; 17       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 45    ; 45   ;
+; Unconstrained Output Ports      ; 21    ; 21   ;
+; Unconstrained Output Port Paths ; 55    ; 55   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue May 14 13:59:53 2019
+Info: Command: quartus_sta cu -c cu
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'cu.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name reloj reloj
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.684
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.684        -2.064 reloj 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 reloj 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -16.295 reloj 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.298
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.298         0.000 reloj 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 reloj 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -13.380 reloj 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4541 megabytes
+    Info: Processing ended: Tue May 14 13:59:56 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
